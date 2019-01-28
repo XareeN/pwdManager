@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Password Manager 2</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Password Manager</string>
+    <string name="nav_header_subtitle">adbigaj@us.edu.pl</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="nav_myPasswords_en">My Passwords</string>
+    <string name="nav_passwordGenerator_en">Password Generator</string>
+    <string name="nav_backupRestore_en">Backup/Restore</string>
+    <string name="nav_settings_en">Settings</string>
+    <string name="nav_about_en">About</string>
+
+    <string name="nav_myPasswords_pl">Moje Hasła</string>
+    <string name="nav_passwordGenerator_pl">Generator Haseł</string>
+    <string name="nav_backupRestore_pl">Backup/Przywróć</string>
+    <string name="nav_settings_pl">Ustawienia</string>
+    <string name="nav_about_pl">O Apce</string>
+    <string name="sortByNameAZ_pl">Nazwa (A-Z)</string>
+    <string name="sortByNameZA_pl">Nazwa (Z-A)</string>
+    <string name="sortByOldestFirst_pl">Najpierw najstarsze</string>
+    <string name="sortByLastModFirst_pl">Najpierw ost. mod.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
