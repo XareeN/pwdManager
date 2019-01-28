@@ -5,11 +5,17 @@
     android:layout_height="match_parent"
     tools:context=".MyPwdsFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="My Pwds"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+<ListView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+</ListView>
+
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:text="My Pwds"-->
+        <!--android:textSize="30sp"-->
+        <!--android:layout_centerInParent="true"/>-->
 
 </RelativeLayout>
