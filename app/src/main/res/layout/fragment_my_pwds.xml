@@ -5,17 +5,35 @@
     android:layout_height="match_parent"
     tools:context=".MyPwdsFragment">
 
-<ListView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <!--<include-->
+        <!--android:id="@+id/toolbar"-->
+        <!--layout="@layout/toolbar" />-->
 
-</ListView>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp">
+
+    </ListView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:src="@drawable/ic_add_white_24dp"/>
 
     <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:text="My Pwds"-->
-        <!--android:textSize="30sp"-->
-        <!--android:layout_centerInParent="true"/>-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:text="My Pwds"-->
+    <!--android:textSize="30sp"-->
+    <!--android:layout_centerInParent="true"/>-->
 
 </RelativeLayout>
