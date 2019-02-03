@@ -10,6 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class MyPwdsFragment extends Fragment {
+    private MainActivity mainActivity;
+
+    @Override
+    public void onResume() {
+        mainActivity = (MainActivity) getActivity();
+        mainActivity.getToolbar().setTitle("Loginz");
+        super.onResume();
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -20,7 +29,7 @@ public class MyPwdsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (getFragmentManager() != null) {
-                    getFragmentManager().beginTransaction().replace(R.id.fragment_container, new AddPwdFragment()).commit();
+                    getFragmentManager().beginTransaction().replace(R.id.fragment_container, new AddPwdFragment()).addToBackStack(null).commit();
                 }
             }
         });

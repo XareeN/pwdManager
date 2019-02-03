@@ -8,12 +8,16 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     private Toolbar toolbar;
+    private long backPressedTime;
+    private Toast backToast;
+    private boolean showSaveCancelMenu = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MyPwdsFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_myPwds);
+            toolbar.setTitle("Logins");
         }
     }
 
@@ -48,6 +53,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();
         }
+
+//        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+//            backToast.cancel();
+//            super.onBackPressed();
+//        } else {
+//            backToast = Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT);
+//            backToast.show();
+//        }
+//        backPressedTime = System.currentTimeMillis();
+
     }
 
     @Override
@@ -57,7 +72,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.nav_myPwds) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MyPwdsFragment()).commit();
-
         } else if (id == R.id.nav_pwdGen) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new GeneratorFragment()).commit();
             Toast.makeText(this, "Pwd generator może w kolejnej wersji", Toast.LENGTH_SHORT).show();
@@ -78,5 +92,43 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.save_tbar_btn) {
+
+            //TODO: save obv
+
+        } else if (id == R.id.cancel_tbar_btn) {
+            getSupportFragmentManager().popBackStack();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        if(showSaveCancelMenu){
+            getMenuInflater().inflate(R.menu.save_cancel_menu, menu);
+        }
+        return true;
+    }
+
+    public Toolbar getToolbar() {
+        return toolbar;
+    }
+
+    public DrawerLayout getDrawer() {
+        return drawer;
+    }
+
+    public boolean isShowSaveCancelMenu() {
+        return showSaveCancelMenu;
+    }
+
+    public void setShowSaveCancelMenu(boolean showSaveCancelMenu) {
+        this.showSaveCancelMenu = showSaveCancelMenu;
     }
 }

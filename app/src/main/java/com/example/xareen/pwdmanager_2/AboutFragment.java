@@ -9,6 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class AboutFragment extends Fragment {
+    private MainActivity mainActivity;
+
+    @Override
+    public void onResume() {
+        mainActivity = (MainActivity) getActivity();
+        mainActivity.getToolbar().setTitle("About");
+        super.onResume();
+    }
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
