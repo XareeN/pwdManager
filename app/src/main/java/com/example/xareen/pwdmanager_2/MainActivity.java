@@ -1,5 +1,6 @@
 package com.example.xareen.pwdmanager_2;
 
+import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -10,7 +11,13 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.Toast;
+
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
@@ -18,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private long backPressedTime;
     private Toast backToast;
     private boolean showSaveCancelMenu = false;
+    private boolean showPwdSortingMenu = false;
+    private Realm realm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +53,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             navigationView.setCheckedItem(R.id.nav_myPwds);
             toolbar.setTitle("Logins");
         }
+
+//        ### Realm initial setup
+        Realm.init(this);
+        RealmConfiguration config = new RealmConfiguration.Builder().build();
+        Realm.setDefaultConfiguration(config);
+        realm = Realm.getInstance(config);
+
+
     }
 
     @Override
@@ -94,26 +111,44 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.save_tbar_btn) {
-
-            //TODO: save obv
-
-        } else if (id == R.id.cancel_tbar_btn) {
-            getSupportFragmentManager().popBackStack();
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        int id = item.getItemId();
+//        if (id == R.id.save_tbar_btn) {
+//
+//            //TODO: save obv
+//
+//        } else if (id == R.id.cancel_tbar_btn) {
+//            getSupportFragmentManager().popBackStack();
+//        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if(showSaveCancelMenu){
+        if (showSaveCancelMenu) {
             getMenuInflater().inflate(R.menu.save_cancel_menu, menu);
         }
+        if (showPwdSortingMenu) {
+            getMenuInflater().inflate(R.menu.pwd_sorting_menu, menu);
+        }
         return true;
+    }
+
+    @Override
+    protected void onDestroy() {
+        ExitActivity.exitApplication(this);
+        super.onDestroy();
+    }
+
+    public void closeKeyboard(){
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(),0);
+        }
+
     }
 
     public Toolbar getToolbar() {
@@ -131,4 +166,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void setShowSaveCancelMenu(boolean showSaveCancelMenu) {
         this.showSaveCancelMenu = showSaveCancelMenu;
     }
+
+    public boolean isShowPwdSortingMenu() {
+        return showPwdSortingMenu;
+    }
+
+    public void setShowPwdSortingMenu(boolean showPwdSortingMenu) {
+        this.showPwdSortingMenu = showPwdSortingMenu;
+    }
+
+    public Realm getRealm() {
+        return realm;
+    }
+
+
 }

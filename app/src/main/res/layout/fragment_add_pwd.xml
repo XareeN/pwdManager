@@ -6,97 +6,107 @@
     tools:context=".AddPwdFragment">
 
     <!--<include-->
-        <!--android:id="@+id/toolbar"-->
-        <!--layout="@layout/toolbar" />-->
+    <!--android:id="@+id/toolbar"-->
+    <!--layout="@layout/toolbar" />-->
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <!--<ListView-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--<ListView-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="match_parent">-->
 
-        <!--</ListView>-->
-        <EditText
-            android:id="@+id/et_title"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:layout_marginLeft="19dp"
-            android:layout_marginRight="19dp"
-            android:drawableLeft="@drawable/ic_title_3a3a3a_24dp"
-            android:drawablePadding="10dp"
-            android:hint="Title" />
-        <EditText
-            android:id="@+id/et_username"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:layout_marginLeft="19dp"
-            android:layout_marginRight="19dp"
-            android:drawableLeft="@drawable/ic_person_3a3a3a_24dp"
-            android:drawablePadding="10dp"
-            android:hint="Username" />
-        <EditText
-            android:id="@+id/et_password"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:layout_marginLeft="19dp"
-            android:layout_marginRight="19dp"
-            android:drawableLeft="@drawable/ic_vpn_key_3a3a3a_24dp"
-            android:drawablePadding="10dp"
-            android:hint="Password" />
-        <EditText
-            android:id="@+id/et_password2"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:layout_marginLeft="19dp"
-            android:layout_marginRight="19dp"
-            android:drawableLeft="@drawable/ic_vpn_key_3a3a3a_24dp"
-            android:drawablePadding="10dp"
-            android:hint="Password 2" />
-        <EditText
-            android:id="@+id/et_email"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:layout_marginLeft="19dp"
-            android:layout_marginRight="19dp"
-            android:drawableLeft="@drawable/ic_email_3a3a3a_24dp"
-            android:drawablePadding="10dp"
-            android:hint="Email" />
-        <EditText
-            android:id="@+id/et_website"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:layout_marginLeft="19dp"
-            android:layout_marginRight="19dp"
-            android:drawableLeft="@drawable/ic_web_3a3a3a_24dp"
-            android:drawablePadding="10dp"
-            android:hint="Website" />
-        <EditText
-            android:id="@+id/et_notes"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:layout_marginLeft="19dp"
-            android:layout_marginRight="19dp"
-            android:drawableLeft="@drawable/ic_note_3a3a3a_24dp"
-            android:drawablePadding="10dp"
-            android:hint="Notes" />
-        <!--<EditText-->
+            <!--</ListView>-->
+            <EditText
+                android:id="@+id/et_title"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="19dp"
+                android:drawableLeft="@drawable/ic_title_3a3a3a_24dp"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Title"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="19dp"
+                android:drawableLeft="@drawable/ic_person_3a3a3a_24dp"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Username"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="19dp"
+                android:drawableLeft="@drawable/ic_vpn_key_3a3a3a_24dp"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/et_password2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="19dp"
+                android:drawableLeft="@drawable/ic_vpn_key_3a3a3a_24dp"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Password 2"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="19dp"
+                android:drawableLeft="@drawable/ic_email_3a3a3a_24dp"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/et_website"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="19dp"
+                android:drawableLeft="@drawable/ic_web_3a3a3a_24dp"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Website"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/et_notes"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="19dp"
+                android:drawableLeft="@drawable/ic_note_3a3a3a_24dp"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Notes"
+                android:inputType="textPersonName" />
+            <!--<EditText-->
             <!--android:id="@+id/editText"-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="60dp"-->
@@ -104,7 +114,8 @@
             <!--android:inputType="textPersonName"-->
             <!--android:text="Name" />-->
 
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 
 </FrameLayout>

@@ -1,58 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ddd"
+    android:orientation="vertical"
     tools:context=".PwdDetailsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    <TextView
+        android:id="@+id/tv_created_on"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="13dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hola"
-                android:textSize="20dp"
-                android:layout_weight="1"/>
-            <Switch
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                />
+        android:layout_height="wrap_content"
+        android:paddingTop="2dp"
+        android:paddingBottom="7dp"
+        android:text="tv_created_on"
+        android:textAlignment="center"
+        android:textSize="13dp" />
 
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="13dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hola"
-                android:textSize="20dp"
-                android:layout_weight="1"/>
-            <Switch
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                />
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:drawableLeft="@drawable/ic_title_3a3a3a_24dp"
+        android:drawablePadding="10dp"
+        android:paddingLeft="@dimen/fab_margin"
+        android:paddingRight="@dimen/fab_margin"
+        android:paddingBottom="@dimen/fab_margin"
+        android:text="tv_title"
+        android:textSize="27dp" />
 
-        </LinearLayout>
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:drawableLeft="@drawable/ic_person_3a3a3a_24dp"
+        android:drawablePadding="10dp"
+        android:paddingLeft="@dimen/fab_margin"
+        android:paddingRight="@dimen/fab_margin"
+        android:paddingBottom="@dimen/fab_margin"
+        android:text="tv_username"
+        android:textSize="27dp" />
 
+    <TextView
+        android:id="@+id/tv_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:drawableLeft="@drawable/ic_vpn_key_3a3a3a_24dp"
+        android:drawablePadding="10dp"
+        android:paddingLeft="@dimen/fab_margin"
+        android:paddingRight="@dimen/fab_margin"
+        android:paddingBottom="@dimen/fab_margin"
+        android:text="tv_pwd"
+        android:textSize="27dp" />
 
-    </LinearLayout>
-    <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:text="@string/hello_blank_fragment" />-->
+    <TextView
+        android:id="@+id/tv_pwd2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:drawableLeft="@drawable/ic_vpn_key_3a3a3a_24dp"
+        android:drawablePadding="10dp"
+        android:paddingLeft="@dimen/fab_margin"
+        android:paddingRight="@dimen/fab_margin"
+        android:paddingBottom="@dimen/fab_margin"
+        android:text="tv_pwd2"
+        android:textSize="27dp" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:drawableLeft="@drawable/ic_email_3a3a3a_24dp"
+        android:drawablePadding="10dp"
+        android:paddingLeft="@dimen/fab_margin"
+        android:paddingRight="@dimen/fab_margin"
+        android:paddingBottom="@dimen/fab_margin"
+        android:text="tv_email"
+        android:textSize="27dp" />
+
+    <TextView
+        android:id="@+id/tv_website"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:drawableLeft="@drawable/ic_web_3a3a3a_24dp"
+        android:drawablePadding="10dp"
+        android:paddingLeft="@dimen/fab_margin"
+        android:paddingRight="@dimen/fab_margin"
+        android:paddingBottom="@dimen/fab_margin"
+        android:text="tv_website"
+        android:textSize="27dp" />
+
+    <TextView
+        android:id="@+id/tv_notes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:drawableLeft="@drawable/ic_note_3a3a3a_24dp"
+        android:drawablePadding="10dp"
+        android:paddingLeft="@dimen/fab_margin"
+        android:paddingRight="@dimen/fab_margin"
+        android:paddingBottom="@dimen/fab_margin"
+        android:text="tv_notes"
+        android:textSize="27dp" />
+
+    <TextView
+        android:id="@+id/tv_last_mod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="2dp"
+        android:paddingBottom="7dp"
+        android:text="tv_last_mod"
+        android:textAlignment="center"
+        android:textSize="13dp" />
+
+    <TextView
+        android:id="@+id/tv_copy_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="2dp"
+        android:paddingBottom="7dp"
+        android:text="Lopng press any field to copy to clipboard"
+        android:textAlignment="center"
+        android:textColor="#818181"
+        android:textSize="13dp" />
+
+</LinearLayout>

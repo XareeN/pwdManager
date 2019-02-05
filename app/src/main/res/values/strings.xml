@@ -2,8 +2,8 @@
     <string name="app_name">Password Manager 2</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Password Manager</string>
-    <string name="nav_header_subtitle">adbigaj@us.edu.pl</string>
+    <string name="nav_header_title">Safe Offline Password Manager</string>
+    <string name="nav_header_subtitle">Created by XareeN</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 

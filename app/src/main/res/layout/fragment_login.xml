@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".LoginFragment">
+
+    <!-- TODO: Add background, add round icon above -->
+
+    <EditText
+        android:id="@+id/et_master_pwd_login"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:background="@color/white"
+        android:drawableLeft="@drawable/ic_vpn_key_3a3a3a_24dp"
+        android:drawablePadding="10dp"
+        android:hint="Master Password"
+        android:textAlignment="center"/>
+    <TextView
+        android:id="@+id/tv_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:text=""
+        android:textAlignment="center" />
+
+</LinearLayout>
