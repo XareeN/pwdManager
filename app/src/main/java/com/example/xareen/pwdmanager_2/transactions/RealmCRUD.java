@@ -5,6 +5,7 @@ import android.widget.Toast;
 
 import com.example.xareen.pwdmanager_2.MainActivity;
 import com.example.xareen.pwdmanager_2.model.Logins;
+import com.example.xareen.pwdmanager_2.model.Master;
 
 import java.util.ArrayList;
 
@@ -30,12 +31,12 @@ public class RealmCRUD {
     }
 
     //Read
-    public ArrayList<String> retrieve() {
-        ArrayList<String> loginsList = new ArrayList<>();
+    public ArrayList<Logins> retrieve() {
+        ArrayList<Logins> loginsList = new ArrayList<>();
         RealmResults<Logins> logins = realm.where(Logins.class).findAll();
 
         for (Logins l : logins) {
-            loginsList.add(l.getTitle());
+            loginsList.add(l);
         }
         return loginsList;
     }
@@ -64,13 +65,13 @@ public class RealmCRUD {
 
     //Delete
     public void delete(long id) {
-//        realm.executeTransaction(new Realm.Transaction() {
-//            @Override
-//            public void execute(Realm realm) {
-//                RealmResults<Logins> results = realm.where(Logins.class).equalTo("id", id).findAll();
-//                results.deleteAllFromRealm();
-//            }
-//        });
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                RealmResults<Logins> results = realm.where(Logins.class).equalTo("id", id).findAll();
+                results.deleteAllFromRealm();
+            }
+        });
     }
 
     public void deleteAll() {
@@ -83,7 +84,48 @@ public class RealmCRUD {
         });
     }
 
-    public void saveMaster(Realm realm) {
+    //Check for master presence
+    public boolean isMaster() {
+//        ArrayList<Integer> masterList = new ArrayList<>();
+        RealmResults<Master> master = realm.where(Master.class).findAll();
 
+        return !master.isEmpty();
+    }
+
+    public void saveMaster(Master master) {
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                Master m = realm.copyToRealm(master);
+
+            }
+        });
+    }
+
+    public ArrayList<Master> retrieveMaster() {
+        ArrayList<Master> masterList = new ArrayList<>();
+        RealmResults<Master> master = realm.where(Master.class).findAll();
+
+        for (Master m : master) {
+            masterList.add(m);
+        }
+        return masterList;
+    }
+
+    public void udpateMasterPwd(){
+
+    }
+    public void updateMasterHint(){
+
+    }
+
+    public void deleteMaster() {
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                RealmResults<Master> results = realm.where(Master.class).findAll();
+                results.deleteAllFromRealm();
+            }
+        });
     }
 }

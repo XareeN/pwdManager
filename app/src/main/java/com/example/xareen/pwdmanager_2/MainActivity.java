@@ -13,8 +13,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.xareen.pwdmanager_2.transactions.RealmCRUD;
+
+import java.security.SecureRandom;
+import java.util.ArrayList;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -27,6 +33,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private boolean showSaveCancelMenu = false;
     private boolean showPwdSortingMenu = false;
     private Realm realm;
+    private RealmCRUD crud;
+    private ArrayList<String> master;
+    private ArrayAdapter<String> adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,18 +57,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-//        ### Handling device rotations
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MyPwdsFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_myPwds);
-            toolbar.setTitle("Logins");
-        }
+        //TODO: encryption below
 
 //        ### Realm initial setup
         Realm.init(this);
+//        byte[] key = new byte[64];
+//        new SecureRandom().nextBytes(key);
+
         RealmConfiguration config = new RealmConfiguration.Builder().build();
+//        RealmConfiguration config = new RealmConfiguration.Builder().encryptionKey(key).build();
         Realm.setDefaultConfiguration(config);
         realm = Realm.getInstance(config);
+
+
+
+        //        ### Setting up register or login at first page
+        if (savedInstanceState == null) {
+            crud = new RealmCRUD(realm);
+//            crud.deleteMaster();
+            if (crud.isMaster()) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new LoginFragment()).commit();
+//                navigationView.setCheckedItem(R.id.nav_myPwds);
+//                toolbar.setTitle("Log into Password Manager");
+            } else {
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new RegisterFragment()).commit();
+//                navigationView.setCheckedItem(R.id.nav_myPwds);
+//                toolbar.setTitle("Create a Master User");
+            }
+
+        }
 
 
     }
@@ -111,20 +138,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        int id = item.getItemId();
-//        if (id == R.id.save_tbar_btn) {
-//
-//            //TODO: save obv
-//
-//        } else if (id == R.id.cancel_tbar_btn) {
-//            getSupportFragmentManager().popBackStack();
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if (showSaveCancelMenu) {
@@ -142,11 +155,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onDestroy();
     }
 
-    public void closeKeyboard(){
+    public void closeKeyboard() {
         View view = this.getCurrentFocus();
         if (view != null) {
             InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(view.getWindowToken(),0);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
 
     }

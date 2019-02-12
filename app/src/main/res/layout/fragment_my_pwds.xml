@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyPwdsFragment">
+    tools:context=".MyPwdsFragment"
+    android:background="#ddd">
 
     <!--<include-->
     <!--android:id="@+id/toolbar"-->
@@ -13,12 +14,24 @@
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent">-->
 
+        <TextView
+            android:id="@+id/tv_created_on"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:paddingBottom="7dp"
+            android:text="Longpress item in order to delete it"
+            android:textAlignment="center"
+            android:textSize="13dp"
+            android:textColor="#ce2900" />
+
         <ListView
             android:id="@+id/lv_my_pwds"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp">
+            android:layout_marginTop="27dp"
+            android:background="@color/white">
 
         </ListView>
     <!--</ScrollView>-->

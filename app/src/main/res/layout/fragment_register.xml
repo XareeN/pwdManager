@@ -1,45 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     tools:context=".RegisterFragment">
+
+    <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="top"-->
+        <!--android:src="@drawable/rain_on_glass_wallpaper"-->
+        <!--android:rotation="90"-->
+        <!--android:scaleX="2"-->
+        <!--android:scaleY="2"-->
+        <!--android:alpha="1"/>-->
+
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#000"-->
+        <!--android:alpha="0.5"/>-->
 
     <!-- TODO: Add background, add round icon above -->
 
-    <EditText
-        android:id="@+id/et_master_pwd_register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginRight="@dimen/fab_margin"
-        android:hint="Master password" />
-
-    <EditText
-        android:id="@+id/et_master_pwd2_register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginRight="@dimen/fab_margin"
-        android:hint="Retype Master password" />
-
-    <EditText
-        android:id="@+id/et_master_pwd_hint"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginRight="@dimen/fab_margin"
-        android:layout_marginTop="10dp"
-        android:hint="Hint for password" />
-
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="50dp"
-        android:text="Here you are seting up a Master Password - note that once set, cannot be recovered. \nHowever you can change the password later after you log in."
-        android:textAlignment="center" />
-</LinearLayout>
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="#fff" />
+
+        <EditText
+            android:id="@+id/et_master_pwd_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:hint="@string/master_password_en"
+            android:maxLines="1"
+            android:inputType="textPassword"/>
+
+        <EditText
+            android:id="@+id/et_master_pwd2_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:hint="@string/retype_master_password_en"
+            android:maxLines="1"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/et_master_pwd_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:hint="@string/hint_for_password_en"
+            android:inputType="text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="50dp"
+            android:text="@string/registration_info_en"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/btn_save_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save_en"
+            android:clickable="false"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

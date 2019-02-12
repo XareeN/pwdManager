@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn=".SettingsFragment">
+
+    <group
+        android:id="@+id/settingsMenu_group1">
+        <item
+            android:id="@+id/settingsMenu_changeMasterPassword"
+            android:title="Change master password" />
+
+        <item
+            android:id="@+id/settingsMenu_changeMasterPasswordHint"
+            android:title="Change master password hint" />
+
+    </group>
+
+    <group
+        android:id="@+id/settingsMenu_group2">
+        <item
+            android:title="laloliii">
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right" />
+        </item>
+    </group>
+
+</menu>

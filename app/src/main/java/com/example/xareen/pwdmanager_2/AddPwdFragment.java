@@ -117,7 +117,7 @@ public class AddPwdFragment extends Fragment {
 
     @Override
     public void onDestroy() {
-
+        //Bring back drawer and its icon on toolbar
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 mainActivity, mainActivity.getDrawer(), mainActivity.getToolbar(), R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         mainActivity.getDrawer().addDrawerListener(toggle);
@@ -164,6 +164,7 @@ public class AddPwdFragment extends Fragment {
 
 
         } else if (id == R.id.cancel_tbar_btn) {
+            mainActivity.closeKeyboard();
             mainActivity.getSupportFragmentManager().popBackStack();
         }
 

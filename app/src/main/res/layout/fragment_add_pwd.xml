@@ -98,14 +98,19 @@
             <EditText
                 android:id="@+id/et_notes"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="19dp"
                 android:layout_marginRight="19dp"
                 android:drawableLeft="@drawable/ic_note_3a3a3a_24dp"
                 android:drawablePadding="10dp"
                 android:ems="10"
                 android:hint="Notes"
-                android:inputType="textPersonName" />
+                android:inputType="textMultiLine"
+                android:lines="4"
+                android:minLines="3"
+                android:gravity="top|left"
+                android:scrollbars="vertical"/>
+
             <!--<EditText-->
             <!--android:id="@+id/editText"-->
             <!--android:layout_width="match_parent"-->

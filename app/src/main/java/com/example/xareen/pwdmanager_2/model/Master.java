@@ -9,6 +9,15 @@ public class Master extends RealmObject {
     private String master_pwd;
     private String master_hint;
 
+    public Master() {
+    }
+
+    public Master(int master_id, String master_pwd, String master_hint) {
+        this.master_id = master_id;
+        this.master_pwd = master_pwd;
+        this.master_hint = master_hint;
+    }
+
     public int getMaster_id() {
         return master_id;
     }

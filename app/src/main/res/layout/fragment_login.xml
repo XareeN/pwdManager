@@ -19,7 +19,10 @@
         android:drawableLeft="@drawable/ic_vpn_key_3a3a3a_24dp"
         android:drawablePadding="10dp"
         android:hint="Master Password"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:imeOptions="actionDone"
+        android:maxLines="1"
+        android:inputType="textPassword"/>
     <TextView
         android:id="@+id/tv_hint"
         android:layout_width="wrap_content"

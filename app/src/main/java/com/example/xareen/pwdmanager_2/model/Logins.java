@@ -1,11 +1,14 @@
 package com.example.xareen.pwdmanager_2.model;
 
+import android.support.annotation.NonNull;
+
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
 public class Logins extends RealmObject {
     @PrimaryKey
     private long id;
+    @NonNull
     private String title;
     private String username;
     private String pwd;
@@ -16,6 +19,15 @@ public class Logins extends RealmObject {
     private String when_created;
     private String last_mod;
 
+    public Logins() {
+
+    }
+
+    public Logins(@NonNull String title, String last_mod) {
+        this.title = title;
+        this.last_mod = last_mod;
+    }
+
     public long getId() {
         return id;
     }
@@ -24,11 +36,12 @@ public class Logins extends RealmObject {
         this.id = id;
     }
 
+    @NonNull
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(@NonNull String title) {
         this.title = title;
     }
 
